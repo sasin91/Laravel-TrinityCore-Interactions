@@ -3,7 +3,7 @@
 namespace Sasin91\LaravelTrinityCoreInteractions\Interactions\Soap;
 
 
-use App\Services\SoapService;
+use Sasin91\LaravelTrinityCoreInteractions\Services\SoapService;
 
 trait InteractsWithSoap
 {
