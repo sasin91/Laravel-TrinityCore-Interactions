@@ -33,22 +33,22 @@ class TrinityCoreInteractionsServiceProvider extends ServiceProvider
 
     protected function registerSoapAccountInteractions()
     {
-        $this->app->bind(Soap\CreateAccountContract::class, Soap\CreateAccount::class);
-        $this->app->bind(Soap\Account\DeleteAccountContract::class, Soap\Account\DeleteAccount::class);
+        $this->app->singleton(Soap\CreateAccountContract::class, Soap\CreateAccount::class);
+        $this->app->singleton(Soap\Account\DeleteAccountContract::class, Soap\Account\DeleteAccount::class);
 
-        $this->app->bind(Soap\Account\SetAccountPasswordContract::class, Soap\Account\SetAccountPassword::class);
+        $this->app->singleton(Soap\Account\SetAccountPasswordContract::class, Soap\Account\SetAccountPassword::class);
 
-        $this->app->bind(Soap\Account\SetAccountExpansionContract::class, Soap\Account\SetAccountExpansion::class);
-        $this->app->bind(Soap\Account\SetGMLevelContract::class, Soap\Account\SetGMLevel::class);
+        $this->app->singleton(Soap\Account\SetAccountExpansionContract::class, Soap\Account\SetAccountExpansion::class);
+        $this->app->singleton(Soap\Account\SetGMLevelContract::class, Soap\Account\SetGMLevel::class);
     }
 
     protected function registerSoapCommunicationInteractions()
     {
-        $this->app->bind(Soap\AnnounceContract::class, Soap\Announce::class);
+        $this->app->singleton(Soap\AnnounceContract::class, Soap\Announce::class);
     }
 
     protected function registerSoapListingInteractions()
     {
-        $this->app->bind(Soap\Account\OnlineListContract::class, Soap\Account\OnlineList::class);
+        $this->app->singleton(Soap\Account\OnlineListContract::class, Soap\Account\OnlineList::class);
     }
 }
