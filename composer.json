@@ -17,7 +17,7 @@
   "autoload": {
     "psr-4": {
       "Sasin91\\LaravelTrinityCoreInteractions\\": "src/",
-      "Sasin91\\LaravelTrinityCoreInteractions\\Tests": "tests/"
+      "Sasin91\\LaravelTrinityCoreInteractions\\Tests\\": "tests/"
     }
   },
   "config": {
