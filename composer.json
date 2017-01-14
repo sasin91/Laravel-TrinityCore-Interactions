@@ -1,0 +1,27 @@
+{
+  "name": "sasin91/laravel-tc-interaction",
+  "description": "Laravel 5 - Interactions for communicating with a TrinityCore server.",
+  "keywords": ["laravel", "interaction", "trinitycore", "tc", "TrinityCore"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jonas Kervin Hansen",
+      "email": "jonas.kerwin.hansen@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "sasin91/laravel-interaction": "dev-master",
+    "artisaninweb/laravel-soap": "0.3.0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sasin91\\LaravelTrinityCoreInteractions\\": "src/",
+      "Sasin91\\LaravelTrinityCoreInteractions\\Tests": "tests/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "minimum-stability": "dev"
+}
