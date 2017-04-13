@@ -2,7 +2,6 @@
 
 namespace Sasin91\LaravelTrinityCoreInteractions\Interactions\Soap\Account;
 
-use Sasin91\LaravelTrinityCoreInteractions\Interactions\Soap\Account\SetGMLevelContract;
 use Sasin91\LaravelTrinityCoreInteractions\Interactions\Soap\InteractsWithSoap;
 
 /**

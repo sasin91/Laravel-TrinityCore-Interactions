@@ -2,7 +2,6 @@
 
 namespace Sasin91\LaravelTrinityCoreInteractions\Interactions\Soap;
 
-use Laravel\Spark\Contracts\Repositories\AnnouncementRepository;
 
 /**
  * Class Announce

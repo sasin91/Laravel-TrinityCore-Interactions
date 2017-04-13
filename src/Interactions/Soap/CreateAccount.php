@@ -2,8 +2,6 @@
 
 namespace  Sasin91\LaravelTrinityCoreInteractions\Interactions\Soap;
 
-use  Sasin91\LaravelTrinityCoreInteractions\Interactions\Soap\CreateAccountContract;
-
 /**
  * Class CreateAccount
  * @package  Sasin91\LaravelTrinityCoreInteractions\Interactions\Soap;
