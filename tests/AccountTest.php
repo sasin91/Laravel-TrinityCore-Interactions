@@ -1,10 +1,12 @@
 <?php namespace sasin91\LaravelTrinityCoreInteractions\Tests;
 
+use Orchestra\Testbench\TestCase;
 use Sasin91\LaravelTrinityCoreInteractions\Expansion;
 use Sasin91\LaravelTrinityCoreInteractions\Interactions\Soap;
 use Sasin91\LaravelTrinityCoreInteractions\TrinityCore;
 
 use Illuminate\Support\Str;
+use Sasin91\LaravelTrinityCoreInteractions\TrinityCoreInteractionsServiceProvider;
 
 /**
  * Class AccountTest
@@ -12,12 +14,24 @@ use Illuminate\Support\Str;
  *
  * @TODO: Split into smaller more meaningful tests.
  */
-class AccountTest extends \TestCase
+class AccountTest extends TestCase
 {
     protected $credentials = [
         'account'   =>  'testAccount',
         'password'  =>  'secret'
     ];
+
+    protected function getPackageProviders($application)
+    {
+        return [TrinityCoreInteractionsServiceProvider::class];
+    }
+
+    protected function getPackageAliases($application)
+    {
+        return [
+            'TrinityCore'   =>  'Sasin91\LaravelTrinityCoreInteractions\Facades\TrinityCore'
+        ];
+    }
 
     /** @test */
     public function can_create_an_account()
