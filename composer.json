@@ -12,7 +12,7 @@
   ],
   "require": {
     "sasin91/laravel-interaction": "dev-master",
-    "artisaninweb/laravel-soap": "0.3.0.1"
+    "artisaninweb/laravel-soap": "0.3.*"
   },
   "autoload": {
     "psr-4": {
@@ -23,5 +23,8 @@
   "config": {
     "preferred-install": "dist"
   },
-  "minimum-stability": "dev"
+  "minimum-stability": "dev",
+  "require-dev": {
+    "orchestra/testbench": "~3.0"
+  }
 }
