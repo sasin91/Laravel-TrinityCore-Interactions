@@ -6,22 +6,34 @@ namespace Sasin91\LaravelTrinityCoreInteractions\Services;
 use Artisaninweb\SoapWrapper\Client;
 use Artisaninweb\SoapWrapper\Service;
 use Artisaninweb\SoapWrapper\SoapWrapper;
+use Illuminate\Support\Arr;
 
 class SoapService
 {
     /**
+     * The Soap wrapper.
+     *
      * @var SoapWrapper
      */
     protected $soap;
 
     /**
+     * The SOAP Service configurations.
+     *
+     * @var array
+     */
+    protected $config = [];
+
+    /**
      * SoapService constructor.
      *
-     * @param SoapWrapper $soap
+     * @param SoapWrapper   $soap
+     * @param array         $config
      */
-    public function __construct(SoapWrapper $soap)
+    public function __construct(SoapWrapper $soap, array $config)
     {
         $this->soap = $soap;
+        $this->config = $config;
         $this->registerTrinityCoreService();
     }
 
@@ -53,7 +65,7 @@ class SoapService
         $this->soap->add('TrinityCore', function (Service $service) {
             return $service
                 ->cache(WSDL_CACHE_MEMORY)
-                ->options(config('TrinityCore.options'));
+                ->options(Arr::get($this->config, 'options'));
         });
     }
 }
