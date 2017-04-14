@@ -66,7 +66,7 @@ class AccountTest extends TestCase
             $expansion = Expansion::WOTLK
         ]);
 
-        $this->assertContains("{$expansion} expansion allowed now.", $response);
+        $this->assertContains("{$expansion} expansion", $response);
     }
 
     /** @test */
@@ -79,7 +79,9 @@ class AccountTest extends TestCase
         ]);
 
         $account = Str::upper($this->credentials['account']);
-        $this->assertContains("You change security level of account {$account} to 3.", $response);
+        $this->assertContains("Security level", $response);
+        $this->assertContains($account, $response);
+        $this->assertContains("to 3", $response);
     }
 
     /** @test */
