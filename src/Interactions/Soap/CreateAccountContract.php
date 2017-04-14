@@ -2,13 +2,11 @@
 
 namespace  Sasin91\LaravelTrinityCoreInteractions\Interactions\Soap;
 
-use Sasin91\LaravelInteractions\Interactions\Interactable;
-
 /**
  * Class CreateAccountContract
  * @package  Sasin91\LaravelTrinityCoreInteractions\Interactions\Soap;
  */
-interface CreateAccountContract extends Interactable
+interface CreateAccountContract
 {
     /**
      * Handle the interaction.

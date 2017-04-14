@@ -2,13 +2,11 @@
 
 namespace Sasin91\LaravelTrinityCoreInteractions\Interactions\Soap\Account;
 
-use Sasin91\LaravelInteractions\Interactions\Interactable;
-
 /**
  * Class SetAccountPasswordContract
  * @package Sasin91\LaravelTrinityCoreInteractions\Interactions\Soap\Account;
  */
-interface SetAccountPasswordContract extends Interactable
+interface SetAccountPasswordContract
 {
     /**
      * Handle the interaction.

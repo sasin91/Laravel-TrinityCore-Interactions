@@ -10,9 +10,12 @@
       "role": "Developer"
     }
   ],
+  "minimum-stability": "dev",
   "require": {
-    "sasin91/laravel-interaction": "dev-master",
     "artisaninweb/laravel-soap": "0.3.*"
+  },
+  "require-dev": {
+    "orchestra/testbench": "~3.0"
   },
   "autoload": {
     "psr-4": {
@@ -22,9 +25,5 @@
   },
   "config": {
     "preferred-install": "dist"
-  },
-  "minimum-stability": "dev",
-  "require-dev": {
-    "orchestra/testbench": "~3.0"
   }
 }

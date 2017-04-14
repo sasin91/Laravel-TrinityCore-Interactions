@@ -2,13 +2,12 @@
 
 namespace Sasin91\LaravelTrinityCoreInteractions\Interactions\Soap;
 
-use Sasin91\LaravelInteractions\Interactions\Interactable;
 
 /**
  * Class AnnounceContract
  * @package Sasin91\LaravelTrinityCoreInteractions\Interactions\Soap;
  */
-interface AnnounceContract extends Interactable
+interface AnnounceContract
 {
     /**
      * Handle the interaction.
