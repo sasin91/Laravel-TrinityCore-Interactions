@@ -37,27 +37,53 @@ class SoapService
         $this->registerTrinityCoreService();
     }
 
+    /**
+     * Fire a SOAP Call.
+     *
+     * @param $action
+     * @param $parameters
+     * @return mixed
+     */
     public function call($action, $parameters)
     {
-        return $this->soap->call($action, $this->parseParameters($parameters));
+        $response = $this->soap->call($action, Arr::wrap($parameters));
+
+        return $this->parseResponse($response);
     }
 
+    /**
+     * Fire a SOAP Command.
+     *
+     * @param $command
+     * @param $parameters
+     * @return mixed
+     */
     public function command($command, $parameters)
     {
         list($client, $call) = explode('.', $command);
 
-        return $this->soap->client($client, function (Client $client) use ($call, $parameters) {
+        $response = $this->soap->client($client, function (Client $client) use ($call, $parameters) {
             $command = $call.' '.implode(' ', $parameters);
 
             return $client->executeCommand(new \SoapParam($command, 'command'));
         });
+
+        return $this->parseResponse($response);
     }
 
-    protected function parseParameters(&$parameters)
+    /**
+     * Parse the SOAP response.
+     *
+     * @param $response
+     * @return mixed|string
+     */
+    protected function parseResponse($response)
     {
-        return is_array($parameters)
-            ? $parameters
-            : (array) $parameters;
+        if (is_string($response)) {
+            return trim(str_replace(PHP_EOL, '', $response));
+        }
+
+        return value($response);
     }
 
     protected function registerTrinityCoreService()
